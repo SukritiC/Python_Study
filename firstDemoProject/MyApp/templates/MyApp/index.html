@@ -1,0 +1,25 @@
+<html>
+<head>
+
+</head>
+<body>
+<!--<h1>{{book_list}}</h1> Simply printing all the objects-->
+
+<!--Iterating through the Book list-->
+<table border="1" cellpadding="50">
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+    </tr>
+    {% for book in book_list %}
+    <tr>
+        <td>{{book.name}}</td>
+        <td>{{book.desc}}</td>
+        <td>{{book.price}}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>
