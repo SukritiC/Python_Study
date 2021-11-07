@@ -22,6 +22,15 @@ def index(request):
     return render(request,'MyApp/index.html',context)
 
 
+def detailed_book_view(request, book_id):
+    book_info = Book.objects.get(id=book_id)
+    context = {
+        'book_info':book_info
+    }
+    # return HttpResponse("This is the book no %s"%book_id)
+
+    return render(request, 'MyApp/book_details.html',context)
+
 
 
 

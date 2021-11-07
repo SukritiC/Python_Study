@@ -9,14 +9,16 @@
 <table border="1" cellpadding="50">
     <tr>
         <th>Name</th>
-        <th>Description</th>
-        <th>Price</th>
+<!--        <th>Description</th>-->
+<!--        <th>Price</th>-->
     </tr>
     {% for book in book_list %}
     <tr>
-        <td>{{book.name}}</td>
-        <td>{{book.desc}}</td>
-        <td>{{book.price}}</td>
+<!--        converting the book name into links with id as URL-->
+        <td><a href="/book/{{book.id}}">{{book.name}}</a></td>
+<!--        <td>{{book.desc}}</td>-->
+<!--        <td>{{book.price}}</td>-->
+
     </tr>
     {% endfor %}
 </table>
