@@ -14,14 +14,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from MyApp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('index/', views.index, name='index'), # Defining Custom URL - giving access to the index view created
-    path('', views.index, name='index'), # Associating view to Homepage instead of custom URL
-    # adding <> synmoblize generation of dynamic URL :- e.g book/2,
-    # Then specify the type of value expected, followed by the variable name
-    path('book/<int:book_id>', views.detailed_book_view, name='details'),
+    # telling the this url to include the urls mentioned in our app
+    path('', include('MyApp.urls')),
 ]

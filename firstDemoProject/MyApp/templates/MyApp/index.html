@@ -15,7 +15,13 @@
     {% for book in book_list %}
     <tr>
 <!--        converting the book name into links with id as URL-->
+<!--        the following is a hardcoded url-->
         <td><a href="/book/{{book.id}}">{{book.name}}</a></td>
+
+<!--        Making URL Dynamic - using the url name from url.py file and passing the required value as well-->
+<!--        MyApp is the namespacing added to the url to point to the url of the specific app only-->
+        <td><a href="{% url 'MyApp:details' book.id%}">{{book.name}}</a></td>
+
 <!--        <td>{{book.desc}}</td>-->
 <!--        <td>{{book.price}}</td>-->
 
