@@ -1,6 +1,8 @@
+<!--To load the static files mention in this html page-->
+{% load static %}
 <html>
 <head>
-
+    <link rel="stylesheet" href="{% static 'MyApp/css/style.css' %}">
 </head>
 <body>
 <!--<h1>{{book_list}}</h1> Simply printing all the objects-->
@@ -8,6 +10,7 @@
 <!--Iterating through the Book list-->
 <table border="1" cellpadding="50">
     <tr>
+        <th>Name</th>
         <th>Name</th>
 <!--        <th>Description</th>-->
 <!--        <th>Price</th>-->
