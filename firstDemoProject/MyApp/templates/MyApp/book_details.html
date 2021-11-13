@@ -1,6 +1,6 @@
-<html>
-<head></head>
-<body>
+<!--Extending base template here-->
+{% extends 'MyApp/base.html' %}
+{% block body %}
 <table border="2" cellpadding="15">
     <tr>
         <th>Name</th>
@@ -13,5 +13,5 @@
         <td>{{book_info.price}}</td>
     </tr>
 </table>
-</body>
-</html>
+{% endblock %}
+

@@ -1,36 +1,23 @@
-<!--To load the static files mention in this html page-->
-{% load static %}
-<html>
-<head>
-    <link rel="stylesheet" href="{% static 'MyApp/css/style.css' %}">
-</head>
-<body>
+<!--Extending base template here-->
+{% extends 'MyApp/base.html' %}
 <!--<h1>{{book_list}}</h1> Simply printing all the objects-->
-
 <!--Iterating through the Book list-->
 <table border="1" cellpadding="50">
     <tr>
         <th>Name</th>
         <th>Name</th>
-<!--        <th>Description</th>-->
-<!--        <th>Price</th>-->
     </tr>
+    {% block body %}     <!-- This are the markers mentioned in the base.html helping to identify the filler -->
     {% for book in book_list %}
     <tr>
-<!--        converting the book name into links with id as URL-->
-<!--        the following is a hardcoded url-->
+        <!--        converting the book name into links with id as URL-->
+        <!--        the following is a hardcoded url-->
         <td><a href="/book/{{book.id}}">{{book.name}}</a></td>
-
-<!--        Making URL Dynamic - using the url name from url.py file and passing the required value as well-->
-<!--        MyApp is the namespacing added to the url to point to the url of the specific app only-->
+        <!--        Making URL Dynamic - using the url name from url.py file and passing the required value as well-->
+        <!--        MyApp is the namespacing added to the url to point to the url of the specific app only-->
         <td><a href="{% url 'MyApp:details' book.id%}">{{book.name}}</a></td>
-
-<!--        <td>{{book.desc}}</td>-->
-<!--        <td>{{book.price}}</td>-->
 
     </tr>
     {% endfor %}
+    {% endblock %}
 </table>
-
-</body>
-</html>
